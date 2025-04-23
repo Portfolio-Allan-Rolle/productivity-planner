@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { environment } from '../../environments/environment';
+//import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 interface IFirebaseRegisterResponse {
@@ -31,7 +31,8 @@ export class AuthService {
     email: string,
     password: string
   ): Observable<IFirebaseRegisterResponse> {
-    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`;
+    // const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`;
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=}`;
     const body = {
       email,
       password,
@@ -44,7 +45,8 @@ export class AuthService {
     email: string,
     password: string
   ): Observable<IFirebaseRegisterResponse> {
-    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseConfig.apiKey}`;
+    // const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`;
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=}`;
     const body = {
       email,
       password,
@@ -58,9 +60,11 @@ export class AuthService {
     userId: string,
     bearerToken: string
   ): Observable<unknown> {
-    const baseUrl = `https://firestore.googleapis.com/v1/projects/${environment.firebaseConfig.projectId}/databases/(default)/documents`;
-    const userFirestoreCollectionId = 'users';
-    const url = `${baseUrl}/${userFirestoreCollectionId}?key=${environment.firebaseConfig.apiKey}&documentId=${userId}`;
+    //const baseUrl = `https://firestore.googleapis.com/v1/projects/${environment.firebaseConfig.projectId}/databases/(default)/documents`;
+    // const userFirestoreCollectionId = 'users';
+    //const url = `${baseUrl}/${userFirestoreCollectionId}?key=${environment.firebaseConfig.apiKey}&documentId=${userId}`;
+    // fix later
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=}`;
     const body = {
       fields: {
         email: { stringValue: email },
