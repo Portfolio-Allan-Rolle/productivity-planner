@@ -61,7 +61,7 @@ export class AuthService {
     bearerToken: string
   ): Observable<unknown> {
     //const baseUrl = `https://firestore.googleapis.com/v1/projects/${environment.firebaseConfig.projectId}/databases/(default)/documents`;
-    const userFirestoreCollectionId = 'users';
+    // const userFirestoreCollectionId = 'users';
     //const url = `${baseUrl}/${userFirestoreCollectionId}?key=${environment.firebaseConfig.apiKey}&documentId=${userId}`;
     // fix later
     const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=}`;
