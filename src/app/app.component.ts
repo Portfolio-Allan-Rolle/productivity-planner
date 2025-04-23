@@ -11,19 +11,18 @@ import { switchMap } from 'rxjs';
 })
 export class AppComponent {
   title = 'productivity-planner';
-  readonly #authService = inject(AuthService);
 
   onLogin() {
-    const email = 'john.doe@gmail.com';
-    const password = 'azerty';
-    this.#authService
-      .login(email, password)
-      .pipe(
-        switchMap((response) => {
-          const { email, localId, idToken } = response;
-          return this.#authService.save(email, localId, idToken);
-        })
-      )
-      .subscribe(console.log);
+    //   const email = 'john.doe@gmail.com';
+    //   const password = 'azerty';
+    //   this.#authService
+    //     .login(email, password)
+    //     .pipe(
+    //       switchMap((response) => {
+    //         const { email, localId, idToken } = response;
+    //         return this.#authService.save(email, localId, idToken);
+    //       })
+    //     )
+    //     .subscribe(console.log);
   }
 }
