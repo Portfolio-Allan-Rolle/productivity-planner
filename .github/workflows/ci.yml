@@ -45,6 +45,13 @@ jobs:
       # - name: Test
       #   run: npm run test:ci
 
+      # Set environment variables
+      - name: Create environment file
+        run: |
+          mkdir src/environments
+          echo "Creating production environment file..."
+          echo "${{ secrets.ENVIRONMENT_PRODUCTION_FILE }}" >> src/environments/environment.ts
+
       # Build
       - name: Build
         run: npm run build
